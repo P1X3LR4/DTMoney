@@ -3,7 +3,7 @@ import {View, Text, ScrollView} from 'react-native';
 import {Main} from './styles';
 import Header from '@components/Header';
 import {BalanceCard, ListBalanceCard} from '@components/BalanceCard';
-import {ListTransaction} from '@components/ListTransactionProps';
+import {ListTransaction} from '@components/ListTransaction';
 
 export default function Home() {
   return (
