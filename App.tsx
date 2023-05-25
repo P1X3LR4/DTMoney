@@ -1,7 +1,8 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Home from './src/Home'
+import {View, Text} from 'react-native';
+import React from 'react';
+import Home from '@screens/Home';
+
 
 export function App() {
-  return <Home />
+  return <Home />;
 }
