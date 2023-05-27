@@ -19,7 +19,6 @@ export const Header = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
   margin-bottom: 24px;
 `;
 export const Title = styled.Text`
@@ -38,5 +37,18 @@ export const Input = styled.TextInput`
   border: 2px solid #d7d7d7;
   border-radius: 5px;
   padding: 16px 24px;
+  font-size: 18px;
 `;
-export const ButtonSubmit = styled.TouchableOpacity``;
+export const ButtonSubmit = styled.TouchableOpacity`
+  border-radius: 5px;
+  padding: 18px 24px;
+  background-color: #33cc95;
+`;
+
+export const ButtonSubmitLabel = styled.Text`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+`;

@@ -10,7 +10,7 @@ const icons = {
 export type CardBalanceProps = {
   title: 'Entradas' | 'Saídas' | 'Total';
   description: string;
-  value: number;
+  value: string;
 };
 
 export const BalanceCard = ({title, description, value}: CardBalanceProps) => {
@@ -19,7 +19,7 @@ export const BalanceCard = ({title, description, value}: CardBalanceProps) => {
       <S.Content>
         <S.Title title={title}>{title}</S.Title>
         <S.Info>
-          <S.InfoValue title={title}>R$ {value}</S.InfoValue>
+          <S.InfoValue title={title}>{value}</S.InfoValue>
           <S.InfoDateMoviments title={title}>{description}</S.InfoDateMoviments>
         </S.Info>
       </S.Content>

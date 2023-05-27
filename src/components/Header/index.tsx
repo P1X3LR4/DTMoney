@@ -5,15 +5,19 @@ import {
   ButtonLabel,
   HeaderContainer,
   HeaderContent,
-  Logo
+  Logo,
 } from './styles';
 
-export default function Header() {
+export type HeaderProps = {
+  onPress: () => void;
+};
+
+export default function Header({onPress}: HeaderProps) {
   return (
     <HeaderContainer>
       <HeaderContent>
         <Logo source={require('../../assets/images/logo.png')} />
-        <ButtonContainer>
+        <ButtonContainer onPress={onPress}>
           <ButtonLabel>Nova Transação</ButtonLabel>
         </ButtonContainer>
       </HeaderContent>

@@ -6,7 +6,7 @@ import RenderList from './RenderList';
 export type ListTransactionProps = {
   id: number;
   name: string;
-  value: string;
+  value: number;
   category: string;
   date: string;
   type: 'Gasto' | 'Receita';
@@ -17,7 +17,7 @@ export const ListTransaction = () => {
     {
       id: 1,
       name: 'Desenvolvimento de site',
-      value: 'R$ 12.000,00',
+      value: 12000,
       category: 'Vendas',
       date: '10/04/2023',
       type: 'Gasto',
@@ -25,15 +25,15 @@ export const ListTransaction = () => {
     {
       id: 2,
       name: 'Desenvolvimento de site',
-      value: 'R$ 2.000,00',
+      value: 59,
       category: 'Vendas',
       date: '10/04/2023',
-      type: 'Gasto',
+      type: 'Receita',
     },
     {
       id: 3,
       name: 'Desenvolvimento de site',
-      value: 'R$ 120,00',
+      value: 0.15,
       category: 'Alimentação',
       date: '10/04/2023',
       type: 'Gasto',
@@ -41,7 +41,7 @@ export const ListTransaction = () => {
     {
       id: 4,
       name: 'Desenvolvimento de site',
-      value: 'R$ 1.000,00',
+      value: 120,
       category: 'Casa',
       date: '10/04/2023',
       type: 'Receita',
@@ -53,11 +53,11 @@ export const ListTransaction = () => {
       <View
         style={{
           height: 24,
-          width: "100%",
+          width: '100%',
         }}
       />
     );
-  }
+  };
 
   return (
     <L.Container>

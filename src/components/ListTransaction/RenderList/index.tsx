@@ -1,24 +1,28 @@
 import React from 'react';
 import * as List from './styles';
+import {ListTransactionProps} from '..';
 
 type Props = {
-  item: {
-    id: number;
-    name: string;
-    value: string;
-    category: string;
-    date: string;
-    type: 'Gasto' | 'Receita';
-  };
+  item: ListTransactionProps;
+};
+
+const MoneyFormater = (value: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
+  }).format(value);
 };
 
 export default function RenderList({item}: Props) {
+
   return (
     <List.Container>
       <List.Body>
         <List.Name>{item.name}</List.Name>
         <List.Value type={item.type}>
-          {item.type === 'Gasto' ? '- ' + item.value : item.value}
+          {item.type === 'Gasto' ? '- ' + MoneyFormater(item.value) : MoneyFormater(item.value)}
         </List.Value>
       </List.Body>
       <List.Footer>
