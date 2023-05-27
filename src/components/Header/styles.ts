@@ -35,7 +35,7 @@ export const ButtonLabel = styled.Text`
   color: #ffffff;
   font-size: 12px;
   line-height: 18px;
-  font-weight: 700;
+  font-family: 'Poppins-Bold';
 `;
 
 export const Logo = styled.Image``;

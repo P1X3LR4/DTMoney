@@ -13,14 +13,14 @@ export const Body = styled.View`
 `;
 
 export const Name = styled.Text`
-  font-weight: 400;
+  font-family: 'Poppins-Regular';
   font-size: 14px;
   line-height: 21px;
   color: #363f5f;
 `;
 
 export const Value = styled.Text<Pick<ListTransactionProps, 'type'>>`
-  font-weight: 400;
+  font-family: 'Poppins-Regular';
   font-size: 20px;
   line-height: 30px;
   color: ${props => (props.type !== 'Receita' ? '#E62E4D' : '#12A454')};
@@ -34,7 +34,7 @@ export const Footer = styled.View`
 `;
 
 export const Category = styled.Text`
-  font-weight: 400;
+  font-family: 'Poppins-Regular';
   font-size: 14px;
   line-height: 21px;
   color: #969cb3;

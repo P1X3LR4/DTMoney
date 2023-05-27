@@ -19,6 +19,7 @@ export const Container = styled.View<Pick<CardBalanceProps, 'title'>>`
   margin-left: 24px;
   margin-right: 24px;
   ${backgroundColor};
+  
 `;
 
 export const Content = styled.View`
@@ -26,7 +27,7 @@ export const Content = styled.View`
   gap: 64px;
 `;
 export const Title = styled.Text<Pick<CardBalanceProps, 'title'>>`
-  font-weight: 400;
+  font-family: 'Poppins-Regular';
   font-size: 14px;
   line-height: 21px;
   ${textColor};
@@ -37,13 +38,13 @@ export const Info = styled.View`
 
 export const InfoValue = styled.Text<Pick<CardBalanceProps, 'title'>>`
   font-size: 30px;
-  font-weight: 500;
+  font-family: 'Poppins-Medium';
   line-height: 45px;
   ${textColor};
 `;
 export const InfoDateMoviments = styled.Text<Pick<CardBalanceProps, 'title'>>`
   font-size: 12px;
-  font-weight: 400;
+  font-family: 'Poppins-Regular';
   line-height: 18px;
   ${textColor};
 `;

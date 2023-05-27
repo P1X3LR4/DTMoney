@@ -1,33 +1,44 @@
 import React from 'react';
-import {View} from 'react-native';
+import {ModalProps, View} from 'react-native';
 import * as MD from './styles';
 
-export type ModalNewTransactionProps = {
-  visible: boolean;
-  onPress: () => void;
+interface ModalNewTransactionProps extends ModalProps {
+  onClose: () => void;
+}
+
+const icons = {
+  Income: require('../../assets/images/entrada.png'),
+  Outcome: require('../../assets/images/saida.png'),
 };
 
 export const ModalNewTransaction = ({
-  visible,
-  onPress,
+  onClose,
+  ...rest
 }: ModalNewTransactionProps) => {
   return (
-    <MD.Modal animationType="fade" transparent={true} visible={visible}>
+    <MD.Modal {...rest}>
       <MD.Overlayer>
         <MD.Container>
           <MD.Header>
             <MD.Title>Cadastrar transação</MD.Title>
-            <MD.ButtonClose onPress={onPress}>
+            <MD.ButtonClose onPress={() => onClose()}>
               <MD.Icon source={require('../../assets/images/close.png')} />
             </MD.ButtonClose>
           </MD.Header>
           <MD.Form>
-            <MD.Input placeholder="Nome" placeholderTextColor={'#969CB2'} />
-            <MD.Input placeholder="Preço" placeholderTextColor={'#969CB2'} />
-            <MD.Input
-              placeholder="Categoria"
-              placeholderTextColor={'#969CB2'}
-            />
+            <MD.Input placeholder="Nome" />
+            <MD.Input placeholder="Preço" />
+            <MD.Input placeholder="Categoria" />
+            <MD.ContainerType>
+              <MD.Type>
+                <MD.IconType source={icons['Income']} />
+                <MD.LabelType>Income</MD.LabelType>
+              </MD.Type>
+              <MD.Type>
+                <MD.IconType source={icons['Outcome']} />
+                <MD.LabelType>Income</MD.LabelType>
+              </MD.Type>
+            </MD.ContainerType>
             <MD.ButtonSubmit>
               <MD.ButtonSubmitLabel>Cadastrar</MD.ButtonSubmitLabel>
             </MD.ButtonSubmit>

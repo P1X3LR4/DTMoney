@@ -37,7 +37,8 @@ export default function HomeScreen() {
       <ListTransaction />
       <ModalNewTransaction
         visible={modalVisible}
-        onPress={() => {
+        transparent
+        onClose={() => {
           setModalVisible(!modalVisible);
         }}
       />

@@ -13,18 +13,18 @@ export const Header = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 `;
 
 export const Title = styled.Text`
-  font-weight: 400;
+  font-family: 'Poppins-Regular';
   font-size: 20px;
   line-height: 30px;
   color: #363f5f;
 `;
 export const TransactionCounter = styled.Text`
-  font-weight: 500;
+  font-family: 'Poppins-Medium';
   font-size: 14px;
   line-height: 21px;
-  color: #969CB2;
+  color: #969cb2;
 `;
