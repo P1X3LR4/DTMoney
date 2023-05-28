@@ -12,42 +12,12 @@ export type ListTransactionProps = {
   type: 'Gasto' | 'Receita';
 };
 
-export const ListTransaction = () => {
-  const list: ListTransactionProps[] = [
-    {
-      id: 1,
-      name: 'Desenvolvimento de site',
-      value: 12000,
-      category: 'Vendas',
-      date: '10/04/2023',
-      type: 'Gasto',
-    },
-    {
-      id: 2,
-      name: 'Desenvolvimento de site',
-      value: 59,
-      category: 'Vendas',
-      date: '10/04/2023',
-      type: 'Receita',
-    },
-    {
-      id: 3,
-      name: 'Desenvolvimento de site',
-      value: 0.15,
-      category: 'Alimentação',
-      date: '10/04/2023',
-      type: 'Gasto',
-    },
-    {
-      id: 4,
-      name: 'Desenvolvimento de site',
-      value: 120,
-      category: 'Casa',
-      date: '10/04/2023',
-      type: 'Receita',
-    },
-  ];
+type Props = {
+  data: ListTransactionProps[];
+  counter: ListTransactionProps[];
+};
 
+export const ListTransaction = ({data, counter}: Props) => {
   const FlatListItemSeparator = () => {
     return (
       <View
@@ -63,11 +33,11 @@ export const ListTransaction = () => {
     <L.Container>
       <L.Header>
         <L.Title>Listagem</L.Title>
-        <L.TransactionCounter>4 itens</L.TransactionCounter>
+        <L.TransactionCounter>{counter.length} itens</L.TransactionCounter>
       </L.Header>
 
       <FlatList
-        data={list}
+        data={data}
         renderItem={({item}) => <RenderList item={item} />}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={FlatListItemSeparator}

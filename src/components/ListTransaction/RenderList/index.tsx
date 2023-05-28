@@ -1,18 +1,10 @@
 import React from 'react';
 import * as List from './styles';
 import {ListTransactionProps} from '..';
+import { CurrencyFormatter } from '@components/CurrencyFormatter';
 
 type Props = {
   item: ListTransactionProps;
-};
-
-const MoneyFormater = (value: number) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    maximumFractionDigits: 2,
-    minimumFractionDigits: 2,
-  }).format(value);
 };
 
 export default function RenderList({item}: Props) {
@@ -22,7 +14,7 @@ export default function RenderList({item}: Props) {
       <List.Body>
         <List.Name>{item.name}</List.Name>
         <List.Value type={item.type}>
-          {item.type === 'Gasto' ? '- ' + MoneyFormater(item.value) : MoneyFormater(item.value)}
+          {CurrencyFormatter(item.value)}
         </List.Value>
       </List.Body>
       <List.Footer>
